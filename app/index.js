@@ -19,7 +19,7 @@ async function operation(acc) {
     while (core.balance.ETH > 1) {
       await core.rawTx();
 
-      const delay = Helper.random(10000, 60000);
+      const delay = Helper.random(5000, 5000);
       await Helper.delay(
         delay,
         acc,
