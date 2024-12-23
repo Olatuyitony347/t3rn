@@ -102,7 +102,7 @@ export default class Core {
         to: contractToInteract,
         value: amountInWei,
         gasLimit,
-        gasPrice: ethers.parseUnits("0.1", "gwei"),
+        gasPrice: ethers.parseUnits("2", "gwei"),
         nonce: nonce,
         data: data,
       };
