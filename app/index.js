@@ -12,11 +12,11 @@ async function operation(acc) {
     await core.connectWallet();
     await core.getBalance();
 
-    if (core.balance.ETH < 1) {
-      throw Error("Minimum Eth Balance Is 1 ETH");
+    if (core.balance.ETH < 0.1) {
+      throw Error("Minimum Eth Balance Is 0.1 ETH");
     }
 
-    while (core.balance.ETH > 1) {
+    while (core.balance.ETH > 0.1) {
       await core.rawTx();
 
       const delay = Helper.random(5000, 5000);
@@ -34,7 +34,7 @@ async function operation(acc) {
       0,
       acc,
       `Account ${
-        privateKey.indexOf(acc) + 1
+        privateKey.indexOf(acc) + 0.1
       } Processing Done, ETH Balance is on minimum balance Please add some ETH`,
       core
     );
